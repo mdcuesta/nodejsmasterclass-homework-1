@@ -1,8 +1,9 @@
 const routes = {};
 
-// Default for 404 route
-routes.notFound = function(data, callback){
-  callback(404);
+routes['hello'] = (data, callback) => { 
+  callback(200, {
+    msg: 'Welcome User!'
+  });
 };
 
 module.exports = routes;

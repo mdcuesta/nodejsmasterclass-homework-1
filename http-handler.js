@@ -10,6 +10,10 @@ const routes = require('./routes');
 
 const DEFAULT_STATUS_CODE = 200;
 
+const notFoundHandler = (data, callback) => {
+  callback(404);
+};
+
 module.exports = (req, res) => {
 
   const parsedUrl = url.parse(req.url, true);
@@ -35,7 +39,7 @@ module.exports = (req, res) => {
       
     const chosenHandler = typeof(routes[trimmedPath]) !== 'undefined' 
       ? routes[trimmedPath] 
-      : routes.notFound;
+      : notFoundHandler;
 
     const data = {
       'trimmedPath' : trimmedPath,
