@@ -9,3 +9,8 @@ A simple HTTP API written in NodeJS without using any framework.
 ```
 node index.js
 ```
+
+### Structure
+* index.js - main javasscript file / bootstrapper class 
+* http-handler.js - contains http handling infrastructure codes
+* routes.js - contains route handling codes
